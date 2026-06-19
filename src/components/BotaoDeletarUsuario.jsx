@@ -20,7 +20,7 @@ function BotaoDeletarUsuario({ usuarioId, onUsuarioDeletado }) {
     };
 
     return (
-        <button onClick={handleDelete} style={{ marginLeft: '10px', backgroundColor: 'red', color: 'white' }}>
+        <button onClick={handleDelete} className="ml-2 bg-red-500 text-white px-2 py-1 rounded">
             Excluir
         </button>
     );

@@ -16,32 +16,21 @@ function ListaProdutos() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold text-center m-8">
-        Lista de Produtos
-      </h1>
-
-      <div>
-        {produtos.map((produto) => (
-          <div
-            key={produto.id}
-            className="bg-white p-5"
-          >
-            <h2 className="text-xl font-semibold">
-              {produto.nome}
-            </h2>
-
-            <p className="font-bold mt-2">
-              R$ {produto.preco.toFixed(2)}
-            </p>
-
-            <p className="m-1">
-              Categoria: {produto.categoria}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <main className="max-w-2xl mx-auto">
+      {produtos.length === 0 ? (
+        <p className="text-center">Nenhum produto encontrado.</p>
+      ) : (
+        <ul className="space-y-3">
+          {produtos.map((produto) => (
+            <li key={produto.id} className="border p-3 rounded">
+              <div className="font-semibold">{produto.nome}</div>
+              <div>R$ {Number(produto.preco).toFixed(2)}</div>
+              <div className="text-sm text-gray-600">Categoria: {produto.categoria}</div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </main>
   );
 }
 
