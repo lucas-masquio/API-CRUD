@@ -17,12 +17,6 @@
       "nome": "Fone de Ouvido Bluetooth",
       "preco": 450,
       "categoria": "Acessórios"
-    },
-    {
-      "nome": "geladeira",
-      "preco": 0,
-      "categoria": "Sem categoria",
-      "id": "f-0rRYVutHw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
