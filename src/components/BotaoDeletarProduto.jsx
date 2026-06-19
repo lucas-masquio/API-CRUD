@@ -1,10 +1,6 @@
 import React from 'react'
 import axios from 'axios'
 
-// Botão simples para deletar um usuário
-// Props:
-// - usuarioId: id do usuário a ser deletado
-// - onUsuarioDeletado: callback chamado após exclusão bem-sucedida
 const BotaoDeletarProduto = ({ produtoId, onProdutoDeletado }) => {
     const handleDelete = async () => {
         const ok = window.confirm(`Deletar usuário ${produtoId}?`)

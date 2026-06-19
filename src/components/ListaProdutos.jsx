@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-// Lista simples de produtos em cards
 function ListaProdutos() {
   const [produtos, setProdutos] = useState([])
 
