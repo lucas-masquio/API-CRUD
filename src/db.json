@@ -1,12 +1,6 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "nome": "Notebook Gamer",
-      "preco": 5500,
-      "categoria": "Eletrônicos"
-    },
-    {
       "id": "2",
       "nome": "Smartphone Avançado",
       "preco": 3200,
