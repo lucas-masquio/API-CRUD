@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Certifique-se de ter o Axios instalado
-    function ListaDeUsuarios() {
+    export default function ListaDeUsuarios() {
         const [usuarios, setUsuarios] = useState([]);
         const [loading, setLoading] = useState(true);
         const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ import axios from 'axios'; // Certifique-se de ter o Axios instalado
                 });
         }, []); // O array vazio garante que a requisição ocorra apenas uma vez ao montar
 
-    function AdicionarUsuario({ onUsuarioAdicionado }) { // Recebe um callback para notificar
+    export default function AdicionarUsuario({ onUsuarioAdicionado }) { // Recebe um callback para notificar
         const [nome, setNome] = useState('');
         const [email, setEmail] = useState('');
         const [status, setStatus] = useState('');
@@ -45,4 +45,36 @@ import axios from 'axios'; // Certifique-se de ter o Axios instalado
             console.error('Erro POST:', err);
             }
         }
-        
+    }
+
+useEffect(() => {
+    if (usuarioParaEditar) {
+        setId(usuarioParaEditar.id);
+        setNome(usuarioParaEditar.nome);
+        setEmail(usuarioParaEditar.email);
+    }    
+}, [usuarioParaEditar]); // Atualiza o formulário se o usuário para editar mudar
+    
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!id) {
+            setStatus('Selecione um usuário para editar.');
+            return;
+    }
+    setStatus('Atualizando...');
+    try {
+        const response = await axios.put(`http://localhost:3001/usuarios/${id}`, { // Requisição PUT
+            nome: nome, // Envie todos os campos que definem o recurso completo
+            email: email
+        });
+        console.log('Usuário atualizado:', response.data);
+        setStatus('Usuário atualizado com sucesso!');
+        if (onUsuarioAtualizado) {
+            onUsuarioAtualizado(); // Notifica o componente pai
+        }
+    } catch (err) {
+        setStatus('Erro ao atualizar usuário.');
+        console.error('Erro PUT:', err);
+    }
+    };
+}
