@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import BotaoDeletarProduto from './BotaoDeletarProduto'
 
 function ListaProdutos() {
   const [produtos, setProdutos] = useState([])
@@ -17,6 +18,10 @@ function ListaProdutos() {
 
     return () => { mounted = false }
   }, [])
+
+  const handleProdutoDeletado = (produtoId) => {
+    setProdutos((prev) => prev.filter((produto) => produto.id !== produtoId))
+  }
 
   if (!produtos || produtos.length === 0) {
     return (
@@ -38,9 +43,15 @@ function ListaProdutos() {
                 {descricao && <p className="text-sm text-gray-600 mb-3">{descricao}</p>}
               </div>
 
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm text-gray-500">Categoria: {categoria}</span>
-                <span className="text-indigo-600 font-semibold">R$ {Number(preco || 0).toFixed(2)}</span>
+              <div className="mt-4 flex items-center justify-between">
+                <div>
+                  <span className="text-sm text-gray-500 block">Categoria: {categoria}</span>
+                  <span className="text-indigo-600 font-semibold">R$ {Number(preco || 0).toFixed(2)}</span>
+                </div>
+                <BotaoDeletarProduto
+                  produtoId={id}
+                  onProdutoDeletado={() => handleProdutoDeletado(id)}
+                />
               </div>
             </article>
           )
