@@ -1,29 +1,36 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
 
-function BotaoDeletarUsuario({ usuarioId, onUsuarioDeletado }) {
+// Botão simples para deletar um usuário
+// Props:
+// - usuarioId: id do usuário a ser deletado
+// - onUsuarioDeletado: callback chamado após exclusão bem-sucedida
+const BotaoDeletarUsuario = ({ usuarioId, onUsuarioDeletado }) => {
     const handleDelete = async () => {
-        if (!window.confirm(`Tem certeza que deseja deletar o usuário com ID: ${usuarioId}?`)) {
-            return;
-        }
+        const ok = window.confirm(`Deletar usuário ${usuarioId}?`)
+        if (!ok) return
 
         try {
-            await axios.delete(`http://localhost:3001/usuarios/${usuarioId}`); // Requisição DELETE
-            console.log(`Usuário com ID ${usuarioId} deletado.`);
-            if (onUsuarioDeletado) {
-                onUsuarioDeletado();
-            }
+            await axios.delete(`http://localhost:3001/usuarios/${usuarioId}`)
+            // chama callback se fornecido
+            if (typeof onUsuarioDeletado === 'function') onUsuarioDeletado()
+            alert('Usuário deletado com sucesso.')
         } catch (err) {
-            console.error('Erro DELETE:', err);
-            alert('Erro ao deletar usuário.');
+            console.error('Erro ao deletar:', err)
+            alert('Não foi possível deletar o usuário.')
         }
-    };
+    }
 
     return (
-        <button onClick={handleDelete} className="ml-2 bg-red-500 text-white px-2 py-1 rounded">
+        <button
+            type="button"
+            aria-label={`Excluir usuário ${usuarioId}`}
+            onClick={handleDelete}
+            className="ml-2 bg-red-500 text-white px-2 py-1 rounded"
+        >
             Excluir
         </button>
-    );
+    )
 }
 
-export default BotaoDeletarUsuario;
+export default BotaoDeletarUsuario
