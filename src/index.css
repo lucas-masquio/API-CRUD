@@ -101,12 +101,15 @@ code {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 input {
   background-color: #ececec;
   color: #000000;
   border-radius: 5px;
   margin-left: 10px;
 =======
+=======
+>>>>>>> Stashed changes
 button {
   border-radius: 5px;
   border-style: solid;
@@ -119,5 +122,8 @@ button {
 button:hover {
   height: 32px;
   width: 92px;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
