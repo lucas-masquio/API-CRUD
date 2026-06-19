@@ -1,5 +1,4 @@
 import ListaProdutos from "./components/ListaProdutos.jsx";
-import BotaoDeletarProduto from "./components/BotaoDeletarProduto.jsx";
 import AdicionarProduto from "./components/AdicionarProduto.jsx";
 
 function App(){

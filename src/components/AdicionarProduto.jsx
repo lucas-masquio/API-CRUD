@@ -2,16 +2,22 @@ import { useState } from "react";
 import axios from "axios";
 
 function AdicionarProduto({ onAdd }) {
-    const [nome, setNome] = useState("");
+    const [nome, setNome, preco, setPreco, categoria, setCategoria] = useState("");
 
     const adicionar = () => {
         if (nome.trim() === "") return;
         setNome(""); 
+
+        if (preco.trim() === "") return;
+        setPreco("");
+
+        if (categoria.trim() === "") return;
+        setCategoria("");
     
         axios.post("http://localhost:3001/produtos", { 
             nome, 
-            preco: 0, 
-            categoria: "Sem categoria" 
+            preco, 
+            categoria,
         })
         .then(res => {
             onAdd(res.data);
@@ -28,6 +34,16 @@ function AdicionarProduto({ onAdd }) {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 placeholder="Nome do produto"
+
+                type="number"
+                value={preco}
+                onChange={(e) => setPreco(e.target.value)}
+                placeholder="Preço do produto"
+
+                type="text"
+                value={categoria}
+                onChange={(e) => setCategoria(e.target.value)}
+                placeholder="Categoria do produto"
                 className="border p-2 rounded flex-1"
             />
             <button onClick={adicionar} className="bg-blue-500 text-white px-4 py-2 rounded">
