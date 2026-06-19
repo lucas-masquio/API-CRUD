@@ -11,6 +11,12 @@
       "nome": "Fone de Ouvido Bluetooth",
       "preco": 450,
       "categoria": "Acessórios"
+    },
+    {
+      "nome": "asd",
+      "preco": "3",
+      "categoria": "asdsad",
+      "id": "nCkooprFQxc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

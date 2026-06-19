@@ -2,7 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 
 function AdicionarProduto({ onAdd }) {
-    const [nome, setNome, preco, setPreco, categoria, setCategoria] = useState("");
+    const [nome, setNome] = useState("");
+    const [preco, setPreco] = useState("");
+    const [categoria, setCategoria] = useState("");
 
     const adicionar = () => {
         if (nome.trim() === "") return;
