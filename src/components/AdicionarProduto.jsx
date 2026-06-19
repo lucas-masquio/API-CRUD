@@ -32,12 +32,13 @@ function AdicionarProduto({ onAdd }) {
     return (
         <div className="flex gap-2 p-4">
             <div className="border p-2 rounded flex-1">
-                <input
-                    type="text"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    placeholder="Nome do produto"
-                />
+    
+                    <input
+                        type="text"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                        placeholder="Nome do produto"
+                    />
 
                 <input
                     type="number"
@@ -54,6 +55,7 @@ function AdicionarProduto({ onAdd }) {
                     
                 />
             </div>
+            
             <button onClick={adicionar} className="bg-blue-500 text-white px-4 py-2 rounded">
                 Adicionar
             </button>
