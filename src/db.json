@@ -17,6 +17,12 @@
       "preco": "3",
       "categoria": "asdsad",
       "id": "nCkooprFQxc"
+    },
+    {
+      "nome": "vebhqvbq",
+      "preco": "67",
+      "categoria": "edgvb",
+      "id": "EZLdinFl6IM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
