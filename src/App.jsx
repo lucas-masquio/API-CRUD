@@ -1,5 +1,6 @@
 import ListaProdutos from "./components/ListaProdutos.jsx";
 import BotaoDeletarProduto from "./components/BotaoDeletarProduto.jsx";
+import AdicionarProduto from "./components/AdicionarProduto.jsx";
 
 function App(){
     return(
@@ -7,6 +8,7 @@ function App(){
             <h1 className="text-2xl font-bold text-center mb-6">Lista de Produtos</h1>
             <ListaProdutos />
             <BotaoDeletarProduto />
+            <AdicionarProduto />
         </div>
     )
 }
