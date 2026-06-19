@@ -17,6 +17,12 @@
       "preco": "3",
       "categoria": "asdsad",
       "id": "nCkooprFQxc"
+    },
+    {
+      "nome": "sdsdvsd",
+      "preco": "124345",
+      "categoria": "adf",
+      "id": "OZ79kqHQagU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

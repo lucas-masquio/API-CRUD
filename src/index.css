@@ -99,3 +99,10 @@ code {
   flex-direction: column;
   justify-content: space-between;
 }
+
+input {
+  background-color: #ececec;
+  color: #000000;
+  border-radius: 5px;
+  margin-left: 10px;
+}
