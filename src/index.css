@@ -100,9 +100,24 @@ code {
   justify-content: space-between;
 }
 
+<<<<<<< Updated upstream
 input {
   background-color: #ececec;
   color: #000000;
   border-radius: 5px;
   margin-left: 10px;
+=======
+button {
+  border-radius: 5px;
+  border-style: solid;
+  margin: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 90px;
+}
+
+button:hover {
+  height: 32px;
+  width: 92px;
+>>>>>>> Stashed changes
 }
